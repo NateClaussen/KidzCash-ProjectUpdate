@@ -1,14 +1,11 @@
-// KidzCash.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// KidzCashAdmin.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include "student.h"
-
 
 int main()
 {
-    //student::PrintMessage();
-    std::cin.get();
+    std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{479b4b20-98c1-4b20-82c6-2e69c7d85560}</ProjectGuid>
-    <RootNamespace>KidzCash</RootNamespace>
+    <ProjectGuid>{d17098f5-a49c-49fa-8bba-8fd8f453a0c4}</ProjectGuid>
+    <RootNamespace>KidzCashAdmin</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -131,7 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="KidzCash.cpp" />
+    <ClCompile Include="KidzCashAdmin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KidzCashCore\KidzCashCore.vcxproj">
