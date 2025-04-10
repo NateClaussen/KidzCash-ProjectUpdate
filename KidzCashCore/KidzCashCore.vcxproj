@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="InMemoryRepo.h" />
     <ClInclude Include="InMemoryStudentRepo.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RepoBase.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="InMemoryRepo.hpp" />
     <ClCompile Include="InMemoryStudentRepo.cpp" />
     <ClCompile Include="KidzCashCore.cpp" />
     <ClCompile Include="pch.cpp">

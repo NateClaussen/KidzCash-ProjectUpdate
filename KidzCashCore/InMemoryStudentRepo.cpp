@@ -19,6 +19,8 @@ namespace KidzCashCore {
 			}
 		}
 		std::cout << "Person Not Found" << std::endl;
+		Student blank(-1,"","",0);
+		return blank;
 	}
 
 	void InMemoryStudentRepo::Update(int id, Student updated) {

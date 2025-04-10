@@ -1,11 +1,11 @@
 #pragma once
 #include "pch.h"
-#include "RepoBase.h"
+#include "InMemoryRepo.h"
 #include "Student.h"
 namespace KidzCashCore {
     //I could make this a template calss and then I could use it for
     //both students and shop items, but nahh...
-    class InMemoryStudentRepo : public RepoBase<Student>
+    class InMemoryStudentRepo : public InMemoryRepo<Student>
     {
     public:
         virtual void Create(Student);
