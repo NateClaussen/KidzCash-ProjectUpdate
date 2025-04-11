@@ -12,5 +12,6 @@
 #include <iostream>
 #include <vector>
 #include <type_traits>
+#include <sstream>
 
 #endif //PCH_H

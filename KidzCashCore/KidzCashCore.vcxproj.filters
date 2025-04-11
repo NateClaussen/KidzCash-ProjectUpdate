@@ -39,6 +39,15 @@
     <ClInclude Include="InMemoryRepo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FileRepo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileRepo.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KidzCashCore.cpp">
@@ -63,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InMemoryRepo.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transaction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

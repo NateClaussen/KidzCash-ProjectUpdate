@@ -1,4 +1,7 @@
 #pragma once
+#include "pch.h"
+#include <iostream>
+
 namespace KidzCashCore {
 	class RepoItem
 	{
@@ -6,6 +9,8 @@ namespace KidzCashCore {
 		RepoItem(int id) : Id(id) {}
 		int getId() const;
 		void setId(int);
+		virtual std::string toStr() = 0;
+		virtual void fromStr(const std::string&) = 0;
 	private:
 		int Id;
 	};

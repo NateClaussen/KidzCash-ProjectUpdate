@@ -2,21 +2,10 @@
 #include <iostream>
 #include <vector> 
 #include "RepoItem.h"
+#include "Transaction.h"
 
 namespace KidzCashCore {
 	//namespace student {
-
-		enum TransType { DEPOSIT = 0, WITHDDRAWL, BUY, OTHER };
-		struct Transaction {
-			std::string day, month, year;
-			float amount;
-			TransType type;
-
-			Transaction(std::string day, std::string month, std::string year, TransType type, float amount) :
-				day(day), month(month), year(year), type(type), amount(amount) {
-			}
-		};
-
 		class Student : public RepoItem {
 		public:
 			/// <summary>
@@ -29,7 +18,12 @@ namespace KidzCashCore {
 			~Student();
 
 			Student& operator=(const Student& other);
-
+			/// <summary>
+			/// Gives the string representation that is written to the file
+			/// </summary>
+			/// <returns>A single line that represents the student</returns>
+			std::string toStr();
+			void fromStr(const std::string& str);
 
 		protected:
 			std::string FirstName, LastName;
