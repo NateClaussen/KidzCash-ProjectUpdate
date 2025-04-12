@@ -4,7 +4,7 @@
 namespace KidzCashCore {
 	void InMemoryStudentRepo::Create(Student student) {
 		if (student.getId() <= 0)
-			student.setId(students.size() + 1);
+		//	student.setId(students.size() + 1);
 		students.push_back(student);
 	}
 
@@ -12,21 +12,20 @@ namespace KidzCashCore {
 		return students;
 	}
 
-	Student InMemoryStudentRepo::ReadById(int id) {
+	Student* InMemoryStudentRepo::ReadById(int id) {
 		for (Student s : students) {
 			if (s.getId() == id) {
-				return s;
+				return &s;
 			}
 		}
 		std::cout << "Person Not Found" << std::endl;
-		Student blank(-1,"","",0);
-		return blank;
+		return nullptr;
 	}
 
 	void InMemoryStudentRepo::Update(int id, Student updated) {
-		Student searched = ReadById(id);
-		if (searched.getId() > 0) {
-			searched = updated;
+		Student* searched = ReadById(id);
+		if (searched->getId() > 0) {
+			*searched = updated;
 		}
 		else {
 			Create(updated);

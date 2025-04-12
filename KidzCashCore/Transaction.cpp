@@ -10,11 +10,13 @@ namespace KidzCashCore {
 
 		std::time_t t = std::time(nullptr);
 
-		std::tm* now = std::localtime(&t);
+		std::tm now;
+		localtime_s(&now, &t);
 
-		day = now->tm_mday;
-		month = now->tm_mon + 1;
-		year = now->tm_year + 1900;
+
+		day = now.tm_mday;
+		month = now.tm_mon + 1;
+		year = now.tm_year + 1900;
 	}
 
 	Transaction::Transaction() : RepoItem(-1) {
@@ -22,11 +24,13 @@ namespace KidzCashCore {
 		amount = 0;
 		std::time_t t = std::time(nullptr);
 
-		std::tm* now = std::localtime(&t);
+		std::tm now;
+		localtime_s(&now, &t);
 
-		day = now->tm_mday;
-		month = now->tm_mon + 1;
-		year = now->tm_year + 1900;
+
+		day = now.tm_mday;
+		month = now.tm_mon + 1;
+		year = now.tm_year + 1900;
 	}
 
 	std::string Transaction::toStr() {

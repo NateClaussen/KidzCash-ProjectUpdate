@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "RepoBase.h"
 #include "Student.h"
+#include "Transaction.h"
 
 namespace KidzCashCore {
 	template<typename T>
@@ -9,6 +10,7 @@ namespace KidzCashCore {
 	{
 		static_assert(std::is_base_of<RepoItem, T>::value, "T must be derived from RepoItem!");
 	public:
+		InMemoryRepo() {}
 		virtual void Create(T);
 		virtual std::vector<T> Read();
 		virtual T* ReadById(int);

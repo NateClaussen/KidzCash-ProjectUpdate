@@ -10,7 +10,7 @@ namespace KidzCashCore {
     public:
         virtual void Create(Student);
         virtual std::vector<Student> Read();
-        virtual Student ReadById(int);
+        virtual Student* ReadById(int);
         virtual void Update(int, Student);
         virtual void Delete(int);
     protected:

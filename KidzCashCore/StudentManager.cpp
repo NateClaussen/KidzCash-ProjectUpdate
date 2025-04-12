@@ -90,19 +90,19 @@ namespace KidzCashCore {
 
 	//Pagination
 	std::vector<Student> StudentManager::GetNextStudents() {
-		paginator.GetNextItems();
+		return paginator.GetNextItems();
 	}
 
 	std::vector<Student> StudentManager::GetPreviousStudents() {
-		paginator.GetPrevItems();
+		return paginator.GetPrevItems();
 	}
 
 	void StudentManager::setDisplayCount(int c) { 
-		displayCount = c; 
+		paginator.setDisplayCount(c); 
 	}
 
 	void StudentManager::setStart(int s) {
-		start = s;
+		paginator.setStart(s);
 	}
 
 }
