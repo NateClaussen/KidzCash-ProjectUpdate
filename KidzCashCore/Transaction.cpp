@@ -17,6 +17,18 @@ namespace KidzCashCore {
 		year = now->tm_year + 1900;
 	}
 
+	Transaction::Transaction() : RepoItem(-1) {
+		type = TransType::OTHER;
+		amount = 0;
+		std::time_t t = std::time(nullptr);
+
+		std::tm* now = std::localtime(&t);
+
+		day = now->tm_mday;
+		month = now->tm_mon + 1;
+		year = now->tm_year + 1900;
+	}
+
 	std::string Transaction::toStr() {
 		std::stringstream ss;
 		ss << getId() << "," << day << "," << month << "," << year << "," << type << "," << amount;

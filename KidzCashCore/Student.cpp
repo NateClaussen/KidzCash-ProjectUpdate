@@ -7,7 +7,7 @@ namespace KidzCashCore {
 	{
 		FirstName = firstName;
 		LastName = lastName;
-		AccountBalance = accountBalance;
+		points = accountBalance;
 		
 		//ReadTransactionHistory();
 	}
@@ -18,34 +18,61 @@ namespace KidzCashCore {
 		//}
 	}
 
+	void Student::addTransaction(Transaction& t) {
+		TransactionHistory.Create(t);
+	}
+
+	void Student::removeTransaction(int id) {
+		TransactionHistory.Delete(id);
+	}
+
 	Student& Student::operator=(const Student& other) {
 		if (this != &other) {
-			TransactionHistory.clear();
+			TransactionHistory.getItems().clear();
 			TransactionHistory = other.TransactionHistory;
 			FirstName = other.FirstName;
 			LastName = other.LastName;
-			AccountBalance = other.AccountBalance;
+			points = other.points;
 		}
 		return *this;
 	}
 
 	float Student::moneySpent() {
 		float total = 0;
-		for (Transaction t : TransactionHistory) {
+		for (Transaction t : TransactionHistory.getItems()) {
 			total += t.getAmount();
 		}
 		return total;
 	}
 
+	void Student::addPoints(float p) {
+		points += p;
+	}
+	
+	bool Student::removePoints(float p) {
+		if (p < 0 || points < p) {
+			return false;
+		}
+		else {
+			points -= p;
+			return true;
+		}
+	}
+
+	float Student::getPoints() {
+		return points;
+	}
+
+
 	std::string Student::toStr() {
 		std::stringstream ss;
-		ss << getId() << "," << LastName << "," << FirstName << "," << AccountBalance;
+		ss << getId() << "," << LastName << "," << FirstName << "," << points;
 
 		//Ideally, I would probably make a separate "transactions" file that would hold all of the transactions
 		//and then connect each transaction to a student... but for the purpose of the final
 		//I think that I am just going to have all of the transactions be on one line... might
 		//get a little messy, but oh well, this file isn't really meant to be read by humans anyways lol...
-		for (Transaction t : TransactionHistory) {
+		for (Transaction t : TransactionHistory.getItems()) {
 			ss << "|" << t.toStr();
 		}
 		return ss.str();
@@ -65,16 +92,16 @@ namespace KidzCashCore {
 		std::getline(ss, LastName, ',');
 		std::getline(ss, FirstName, ',');
 		std::getline(ss, next, ',');
-		AccountBalance = std::stof(next);
+		points = std::stof(next);
 
 		if (!transactionPart.empty()) {
-			TransactionHistory.clear();
+			TransactionHistory.getItems().clear();
 			std::stringstream ts(transactionPart);
 			std::string trans;
 			while (std::getline(ts, trans, '|')) {
 				Transaction t;
 				t.fromStr(trans);
-				TransactionHistory.push_back(t);
+				TransactionHistory.Create(t);
 			}
 		}
 	}

@@ -144,17 +144,20 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="InMemoryRepo.h" />
     <ClInclude Include="InMemoryStudentRepo.h" />
+    <ClInclude Include="Paginator.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RepoBase.h" />
     <ClInclude Include="RepoItem.h" />
     <ClInclude Include="ShopItem.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentManager.h" />
     <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InMemoryRepo.hpp" />
     <ClCompile Include="InMemoryStudentRepo.cpp" />
     <ClCompile Include="KidzCashCore.cpp" />
+    <ClCompile Include="Paginator.hpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -165,6 +168,7 @@
     <ClCompile Include="RepoItem.cpp" />
     <ClCompile Include="ShopItem.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentManager.cpp" />
     <ClCompile Include="Transaction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

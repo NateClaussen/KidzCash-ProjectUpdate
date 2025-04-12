@@ -14,6 +14,8 @@ namespace KidzCashCore {
 		virtual T ReadById(int);
 		virtual void Update(int, T);
 		virtual void Delete(int);
+		//Read part of CRUD
+		std::vector<T> getItems() { return Read(); }
 	protected:
 		std::vector<T> items;
 

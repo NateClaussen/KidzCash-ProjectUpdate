@@ -13,10 +13,10 @@ namespace KidzCashCore {
 	/// </summary>
 	/// <typeparam name="T">RepoItem</typeparam>
 	template<typename T> 
-	class FileRepo : InMemoryRepo<T> {
+	class FileRepo : public InMemoryRepo<T> {
 		static_assert(std::is_base_of<RepoItem, T>::value, "T must be derived from RepoItem!");
 	public:
-		FileRepo(std::string filename) : filename(filename) {}
+		FileRepo(std::string filename);
 		void Create(T item);
 		void Update(int, T);
 		void Delete(int);

@@ -9,7 +9,7 @@ namespace KidzCashCore {
     class Transaction : public RepoItem
     {
     public:
-        Transaction() : RepoItem(-1) {}
+        Transaction();
         Transaction(int id, std::string day, std::string month, std::string year, TransType type, float amount) :
             RepoItem(id), day(day), month(month), year(year), type(type), amount(amount) {}
         /// <summary>

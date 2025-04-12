@@ -40,6 +40,7 @@ namespace KidzCashCore {
 		}
 		//For the file one, I'll have to figure out how to save to that specific spot in the file
 		//to save that specific student...
+		//what I end up doing is over-writing the file every time with the current state of the vector
 	}
 
 	template<typename T>

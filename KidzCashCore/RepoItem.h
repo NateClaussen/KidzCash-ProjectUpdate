@@ -7,6 +7,7 @@ namespace KidzCashCore {
 	{
 	public:
 		RepoItem(int id) : Id(id) {}
+		RepoItem() : Id(-1) {}
 		int getId() const;
 		void setId(int);
 		virtual std::string toStr() = 0;

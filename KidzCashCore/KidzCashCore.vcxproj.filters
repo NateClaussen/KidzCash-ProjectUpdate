@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Repository">
+      <UniqueIdentifier>{64fd2a6a-45bb-400a-865a-2eda7427887c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{3b2ab3a9-122e-4ec2-88e5-5d24576aae43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{f0e14582-90a7-4461-80af-528e81fc3955}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Repository">
+      <UniqueIdentifier>{327ed48b-5c46-443b-bdb2-4d90fff40d9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpers">
+      <UniqueIdentifier>{4a5a7e94-620d-46cb-9956-4e7fb5a40102}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{fafb02a0-f389-4239-bfc1-1b980359b034}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -21,32 +39,38 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ShopItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RepoBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RepoItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InMemoryStudentRepo.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="FileRepo.h">
+      <Filter>Header Files\Repository</Filter>
     </ClInclude>
     <ClInclude Include="InMemoryRepo.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Repository</Filter>
     </ClInclude>
-    <ClInclude Include="FileRepo.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="InMemoryStudentRepo.h">
+      <Filter>Header Files\Repository</Filter>
     </ClInclude>
-    <ClInclude Include="FileRepo.hpp">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="RepoBase.h">
+      <Filter>Header Files\Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="RepoItem.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="ShopItem.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Header Files\Items</Filter>
     </ClInclude>
     <ClInclude Include="Transaction.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="FileRepo.hpp">
+      <Filter>Source Files\Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentManager.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paginator.h">
+      <Filter>Header Files\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -56,26 +80,32 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Student.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ShopItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RepoItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RepoBase.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="InMemoryRepo.hpp">
+      <Filter>Source Files\Repository</Filter>
     </ClCompile>
     <ClCompile Include="InMemoryStudentRepo.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Repository</Filter>
     </ClCompile>
-    <ClCompile Include="InMemoryRepo.hpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="RepoBase.cpp">
+      <Filter>Source Files\Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="RepoItem.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="ShopItem.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>Source Files\Items</Filter>
     </ClCompile>
     <ClCompile Include="Transaction.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentManager.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paginator.hpp">
+      <Filter>Source Files\Helpers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

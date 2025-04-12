@@ -1,8 +1,10 @@
 #pragma once
+#include "pch.h"
 #include <iostream>
 #include <vector> 
 #include "RepoItem.h"
 #include "Transaction.h"
+#include "InMemoryRepo.h"
 
 namespace KidzCashCore {
 	//namespace student {
@@ -24,11 +26,18 @@ namespace KidzCashCore {
 			/// <returns>A single line that represents the student</returns>
 			std::string toStr();
 			void fromStr(const std::string& str);
+			void addTransaction(Transaction&);
+			void removeTransaction(int);
+			std::vector<Transaction> getTransactions() { return TransactionHistory.getItems(); }
+			float getPoints();
+			void addPoints(float);
+			bool removePoints(float);
 
 		protected:
 			std::string FirstName, LastName;
-			float AccountBalance;
-			std::vector<Transaction> TransactionHistory;
+			float points;
+			InMemoryRepo<Transaction> TransactionHistory;
+			//std::vector<Transaction> TransactionHistory;
 			//void ReadTransactionHistory();
 		};
 	}
