@@ -21,6 +21,7 @@ namespace KidzCashCore {
 		float moneySpent();
 
 		Student(int, std::string, std::string, float);
+		Student(const Student& other);
 		~Student();
 
 		Student& operator=(const Student& other);

@@ -12,6 +12,17 @@ namespace KidzCashCore {
 		//ReadTransactionHistory();
 	}
 
+	Student::Student(const Student& other) : RepoItem(other.getId()) {
+		FirstName = other.FirstName;
+		LastName = other.LastName;
+		points = other.points;
+
+		TransactionHistory = new InMemoryRepo<Transaction>();
+		for (const Transaction& t : other.TransactionHistory->getItems()) {
+			TransactionHistory->Create(t);
+		}
+	}
+
 	Student::~Student() {
 		delete TransactionHistory;
 		//for (auto t : TransactionHistory) {
@@ -57,11 +68,16 @@ namespace KidzCashCore {
 
 	Student& Student::operator=(const Student& other) {
 		if (this != &other) {
-			TransactionHistory->getItems().clear();
-			TransactionHistory = other.TransactionHistory;
 			FirstName = other.FirstName;
 			LastName = other.LastName;
 			points = other.points;
+			setId(other.getId());
+
+			delete TransactionHistory;
+			TransactionHistory = new InMemoryRepo<Transaction>();
+			for (const Transaction& t : other.TransactionHistory->getItems()) {
+				TransactionHistory->Create(t);
+			}
 		}
 		return *this;
 	}
