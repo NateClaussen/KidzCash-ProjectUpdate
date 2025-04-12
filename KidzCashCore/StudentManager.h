@@ -15,18 +15,26 @@ namespace KidzCashCore {
 		/// <summary>
 		/// Default values:
 		/// Filename: "Students.KCC"
-		/// DisplayCount: 10 
-		/// Will return 
+		/// DisplayCount: 10  
 		/// </summary>
 		StudentManager();
 		StudentManager(std::string);
 		StudentManager(std::string Filename, int displayCount);
 		
-		void AddTransaction(Student&, Transaction&);
-		void voidTransaction(Student&, Transaction&);
+		//Point Management
+		void AddPoints(int, float);
+		void AddPointsTrans(int, float);
+		bool RemovePoints(int, float);
+		bool RemovePointsTrans(int, float);
+		//void AddTransaction(Student&, Transaction&);
+		//void voidTransaction(Student&, Transaction&);
+
+		//Actual Student Management
 		void AddStudent(Student&);
 		void RemoveStudent(Student&);
-		Student GetStudentById(int id);
+		Student* GetStudentById(int id);
+
+		//Pagination
 		std::vector<Student> GetAllStudents();
 		std::vector<Student> GetNextStudents();
 		std::vector<Student> GetPreviousStudents();

@@ -11,7 +11,7 @@ namespace KidzCashCore {
 	public:
 		virtual void Create(T);
 		virtual std::vector<T> Read();
-		virtual T ReadById(int);
+		virtual T* ReadById(int);
 		virtual void Update(int, T);
 		virtual void Delete(int);
 		//Read part of CRUD

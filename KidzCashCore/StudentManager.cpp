@@ -15,18 +15,61 @@ namespace KidzCashCore {
 	StudentManager::StudentManager(std::string Filename, int displayCount) : 
 		students(Filename), paginator(students.Read(), displayCount) { }
 
-	void StudentManager::AddTransaction(Student& s, Transaction& t) {
-		//I REALLY hope that this works!! I am worried that it is not going to save to the file okay.
-		//Add transaction to the student
-		s.addTransaction(t);
-		//Update the file with that updated student. 
-		students.Update(s.getId(), s);
+	void StudentManager::AddPoints(int id, float p) {
+		Student* s = GetStudentById(id);
+		if (!s) {
+			std::cout << "Student Not Found" << std::endl;
+			return;
+		}
+		s->addPoints(p);
+		students.Save();
 	}
 
-	void StudentManager::voidTransaction(Student& s, Transaction& t) {
-		s.removeTransaction(t.getId());
-		students.Update(s.getId(), s);
+	void StudentManager::AddPointsTrans(int id, float p) {
+		Student* s = GetStudentById(id);
+		if (!s) {
+			std::cout << "Student Not Found" << std::endl;
+			return;
+		}
+		s->addTransaction(TransType::DEPOSIT, p);
+		students.Save();
 	}
+
+	bool StudentManager::RemovePoints(int id, float p) {
+		Student* s = GetStudentById(id);
+		if (!s) {
+			std::cout << "Student Not Found" << std::endl;
+			return false;
+		}
+		bool result = s->removePoints(p);
+		students.Save();
+		return result;
+	}
+
+	bool StudentManager::RemovePointsTrans(int id, float p) {
+		Student* s = GetStudentById(id);
+		if (!s) {
+			std::cout << "Student Not Found" << std::endl;
+			return false;
+		}
+		bool result = s->addTransaction(TransType::WITHDRAWL, p);
+		students.Save();
+		return result;
+	}
+	
+
+	//void StudentManager::AddTransaction(Student& s, Transaction& t) {
+	//	//I REALLY hope that this works!! I am worried that it is not going to save to the file okay.
+	//	//Add transaction to the student
+	//	s.addTransaction(t);
+	//	//Update the file with that updated student. 
+	//	students.Update(s.getId(), s);
+	//}
+
+	//void StudentManager::voidTransaction(Student& s, Transaction& t) {
+	//	s.removeTransaction(t.getId());
+	//	students.Update(s.getId(), s);
+	//}
 
 	void StudentManager::AddStudent(Student& s) {
 		students.Create(s);
@@ -36,7 +79,7 @@ namespace KidzCashCore {
 		students.Delete(s.getId());
 	}
 
-	Student StudentManager::GetStudentById(int id) {
+	Student* StudentManager::GetStudentById(int id) {
 		return students.ReadById(id);
 	}
 

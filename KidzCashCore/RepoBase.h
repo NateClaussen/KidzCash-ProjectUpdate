@@ -27,7 +27,7 @@ namespace KidzCashCore {
 		/// memory management for me on the heap! LOLz
 		/// </summary>
 		virtual std::vector<T> Read() = 0;
-		virtual T ReadById(int) = 0;
+		virtual T* ReadById(int) = 0;
 		/// <summary>
 		/// Updates the first
 		/// </summary>

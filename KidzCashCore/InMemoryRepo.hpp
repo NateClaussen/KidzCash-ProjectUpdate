@@ -19,21 +19,21 @@ namespace KidzCashCore {
 	}
 
 	template<typename T>
-	T InMemoryRepo<T>::ReadById(int id) {
-		for (T s : items) {
+	T* InMemoryRepo<T>::ReadById(int id) {
+		for (T& s : items) {
 			if (s.getId() == id) {
-				return s;
+				return &s;
 			}
 		}
 		std::cout << "Item Not Found" << std::endl;
-		return T{};
+		return nullptr;
 	}
 
 	template<typename T>
 	void InMemoryRepo<T>::Update(int id, T updated) {
-		T searched = ReadById(id);
-		if (searched.getId() > 0) {
-			searched = updated;
+		T* searched = ReadById(id);
+		if (searched->getId() > 0) {
+			*searched = updated;
 		}
 		else {
 			Create(updated);

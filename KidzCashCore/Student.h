@@ -26,7 +26,8 @@ namespace KidzCashCore {
 			/// <returns>A single line that represents the student</returns>
 			std::string toStr();
 			void fromStr(const std::string& str);
-			void addTransaction(Transaction&);
+			bool addTransaction(Transaction&);
+			bool addTransaction(TransType t, float amount);
 			void removeTransaction(int);
 			std::vector<Transaction> getTransactions() { return TransactionHistory.getItems(); }
 			float getPoints();
@@ -37,6 +38,8 @@ namespace KidzCashCore {
 			std::string FirstName, LastName;
 			float points;
 			InMemoryRepo<Transaction> TransactionHistory;
+
+			
 			//std::vector<Transaction> TransactionHistory;
 			//void ReadTransactionHistory();
 		};

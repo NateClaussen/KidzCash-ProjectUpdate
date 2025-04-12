@@ -18,8 +18,30 @@ namespace KidzCashCore {
 		//}
 	}
 
-	void Student::addTransaction(Transaction& t) {
-		TransactionHistory.Create(t);
+	bool Student::addTransaction(Transaction& t) {
+		switch (t.getType()) {
+		case DEPOSIT:
+			addPoints(t.getAmount());
+			TransactionHistory.Create(t);
+			return true;
+		case WITHDRAWL:
+		case BUY:
+			if (removePoints(t.getAmount())) {
+				TransactionHistory.Create(t);
+				return true;
+			}
+			else {
+				return false;
+			}
+		case OTHER:
+			TransactionHistory.Create(t);
+			break;
+		}
+	}
+
+	bool Student::addTransaction(TransType t, float amount) {
+		Transaction trans(-1,t, amount);
+		addTransaction(trans);
 	}
 
 	void Student::removeTransaction(int id) {
