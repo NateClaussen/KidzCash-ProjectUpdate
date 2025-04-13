@@ -11,7 +11,7 @@ public:
 	//void DisplayNextStudents();
 	void AddPoints(int id, float p);
 	void RemovePoints(int id, float p);
-	StudentManager getManager() { return manager; }
+	StudentManager& getManager() { return manager; }
 
 private:
 	void DisplayStudents(std::vector<KidzCashCore::Student>);

@@ -30,7 +30,7 @@ namespace KidzCashCore {
 		//void voidTransaction(Student&, Transaction&);
 
 		//Actual Student Management
-		void AddStudent(Student&);
+		void AddStudent(const Student&);
 		void RemoveStudent(Student&);
 		void EditStudent(int, Student&);
 		Student* GetStudentById(int id);

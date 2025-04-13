@@ -71,7 +71,7 @@ namespace KidzCashCore {
 	//	students.Update(s.getId(), s);
 	//}
 
-	void StudentManager::AddStudent(Student& s) {
+	void StudentManager::AddStudent(const Student& s) {
 		students.Create(s);
 	}
 
