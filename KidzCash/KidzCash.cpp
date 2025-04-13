@@ -3,10 +3,32 @@
 
 #include <iostream>
 #include "student.h"
+#include "PointTracker.h"
 
+using KidzCashCore::Student;
 
 int main()
 {
+    PointTracker tracker;
+
+	Student student1(1, "Johnny", "Joe", 1);
+	Student student2(2, "Joel", "Saurey", 11);
+	Student student3(3, "Maureen", "Saurey", 111);
+	Student student4(4, "Valerie", "Claussen", 1111);
+	Student student5(5, "Larry", "Claussen", 11111);
+
+	/*students.push_back(student1);
+	students.push_back(student2);
+	students.push_back(student3);
+	students.push_back(student4);
+	students.push_back(student5);*/
+	tracker.getManager().AddStudent(student1);
+	tracker.getManager().AddStudent(student2);
+	tracker.getManager().AddStudent(student3);
+	tracker.getManager().AddStudent(student4);
+	tracker.getManager().AddStudent(student5);
+
+    tracker.DisplayMenu(MenuOption::STUDENTS_NEXT);
     //student::PrintMessage();
     std::cin.get();
 }

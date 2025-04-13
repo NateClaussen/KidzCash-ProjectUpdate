@@ -72,6 +72,9 @@
     <ClInclude Include="Paginator.h">
       <Filter>Header Files\Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="ShopManager.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KidzCashCore.cpp">
@@ -86,7 +89,7 @@
     <ClCompile Include="InMemoryStudentRepo.cpp">
       <Filter>Source Files\Repository</Filter>
     </ClCompile>
-    <ClCompile Include="RepoBase.cpp">
+    <ClCompile Include="RepoBase.hpp">
       <Filter>Source Files\Repository</Filter>
     </ClCompile>
     <ClCompile Include="RepoItem.cpp">
@@ -104,7 +107,7 @@
     <ClCompile Include="StudentManager.cpp">
       <Filter>Source Files\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="Paginator.hpp">
+    <ClCompile Include="ShopManager.cpp">
       <Filter>Source Files\Helpers</Filter>
     </ClCompile>
   </ItemGroup>

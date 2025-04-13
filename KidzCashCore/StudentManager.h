@@ -32,6 +32,7 @@ namespace KidzCashCore {
 		//Actual Student Management
 		void AddStudent(Student&);
 		void RemoveStudent(Student&);
+		void EditStudent(int, Student&);
 		Student* GetStudentById(int id);
 
 		//Pagination

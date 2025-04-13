@@ -149,6 +149,7 @@
     <ClInclude Include="RepoBase.h" />
     <ClInclude Include="RepoItem.h" />
     <ClInclude Include="ShopItem.h" />
+    <ClInclude Include="ShopManager.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentManager.h" />
     <ClInclude Include="Transaction.h" />
@@ -157,16 +158,16 @@
     <ClCompile Include="InMemoryRepo.hpp" />
     <ClCompile Include="InMemoryStudentRepo.cpp" />
     <ClCompile Include="KidzCashCore.cpp" />
-    <ClCompile Include="Paginator.hpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="RepoBase.cpp" />
+    <ClCompile Include="RepoBase.hpp" />
     <ClCompile Include="RepoItem.cpp" />
     <ClCompile Include="ShopItem.cpp" />
+    <ClCompile Include="ShopManager.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentManager.cpp" />
     <ClCompile Include="Transaction.cpp" />

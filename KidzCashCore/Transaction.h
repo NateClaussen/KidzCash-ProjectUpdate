@@ -19,7 +19,7 @@ namespace KidzCashCore {
         /// <param name="type">type of transaction</param>
         /// <param name="amount">acmount the transaction was for</param>
         Transaction(int id, TransType type, float amount);
-        std::string toStr();
+        std::string toStr() const;
         void fromStr(const std::string& str);
         //This whole section of code tells me I should prolly convert
         //this back into a struct, but ohhhhh welllll... I'll keep it 

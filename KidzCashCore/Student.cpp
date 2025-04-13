@@ -3,6 +3,12 @@
 #include "InMemoryRepo.h"
 
 namespace KidzCashCore {
+	Student::Student() : RepoItem() {
+		FirstName = "";
+		LastName = "";
+		points = 0;
+		TransactionHistory = new InMemoryRepo<Transaction>();
+	}
 	Student::Student(int id, std::string firstName, std::string lastName, float accountBalance) : RepoItem(id)
 	{
 		FirstName = firstName;
@@ -109,7 +115,7 @@ namespace KidzCashCore {
 	}
 
 
-	std::string Student::toStr() {
+	std::string Student::toStr() const {
 		std::stringstream ss;
 		ss << getId() << "," << LastName << "," << FirstName << "," << points;
 

@@ -20,6 +20,7 @@ namespace KidzCashCore {
 		/// <returns>Total amount a student has spent</returns>
 		float moneySpent();
 
+		Student();
 		Student(int, std::string, std::string, float);
 		Student(const Student& other);
 		~Student();
@@ -29,7 +30,7 @@ namespace KidzCashCore {
 		/// Gives the string representation that is written to the file
 		/// </summary>
 		/// <returns>A single line that represents the student</returns>
-		std::string toStr();
+		std::string toStr() const;
 		void fromStr(const std::string& str);
 		bool addTransaction(Transaction&);
 		bool addTransaction(TransType t, float amount);
@@ -38,6 +39,9 @@ namespace KidzCashCore {
 		float getPoints();
 		void addPoints(float);
 		bool removePoints(float);
+
+		std::string GetFirstName() { return FirstName; }
+		std::string GetLastName() { return LastName; }
 
 	protected:
 		std::string FirstName, LastName;

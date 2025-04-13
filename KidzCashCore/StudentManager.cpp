@@ -13,7 +13,7 @@ namespace KidzCashCore {
 
 	}
 	StudentManager::StudentManager(std::string Filename, int displayCount) : 
-		students(Filename), paginator(students.Read(), displayCount) { }
+		students(Filename), paginator(displayCount) { }
 
 	void StudentManager::AddPoints(int id, float p) {
 		Student* s = GetStudentById(id);
@@ -79,6 +79,10 @@ namespace KidzCashCore {
 		students.Delete(s.getId());
 	}
 
+	void StudentManager::EditStudent(int id, Student& updated) {
+		students.Update(id, updated);
+	}
+
 	Student* StudentManager::GetStudentById(int id) {
 		return students.ReadById(id);
 	}
@@ -90,11 +94,11 @@ namespace KidzCashCore {
 
 	//Pagination
 	std::vector<Student> StudentManager::GetNextStudents() {
-		return paginator.GetNextItems();
+		return paginator.GetNextItems(students.Read());
 	}
 
 	std::vector<Student> StudentManager::GetPreviousStudents() {
-		return paginator.GetPrevItems();
+		return paginator.GetPrevItems(students.Read());
 	}
 
 	void StudentManager::setDisplayCount(int c) { 

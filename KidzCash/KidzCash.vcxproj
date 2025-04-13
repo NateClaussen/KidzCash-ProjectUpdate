@@ -132,11 +132,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="KidzCash.cpp" />
+    <ClCompile Include="PointTracker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KidzCashCore\KidzCashCore.vcxproj">
       <Project>{aeb26868-3092-4007-adb2-1fc24d907117}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PointTracker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

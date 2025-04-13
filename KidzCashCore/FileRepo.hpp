@@ -4,7 +4,7 @@
 
 namespace KidzCashCore {
 
-	template<typename T>
+	/*template<typename T>
 	FileRepo<T>::FileRepo(std::string filename) :filename(filename){
 		Load();
 	}
@@ -48,6 +48,6 @@ namespace KidzCashCore {
 			item.fromStr(line);
 			items.push_back(item);
 		}
-	}
+	}*/
 }
 

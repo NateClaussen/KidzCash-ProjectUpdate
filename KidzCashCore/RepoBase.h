@@ -1,5 +1,4 @@
 #pragma once
-//#include <vector>
 #include "pch.h"
 #include "RepoItem.h"
 
@@ -7,8 +6,7 @@ namespace KidzCashCore {
 	//class RepoBase;
 
 	template<typename T>
-	//typename std::enable_if<std::is_base_of<RepoItem, T>::value,void>::type
-	class RepoBase //<T, typename std::enable_if<std::is_base_of<RepoItem, T>::value>::type>
+	class RepoBase 
 	{
 		static_assert(std::is_base_of<RepoItem, T>::value, "T must be derived from RepoItem!");
 	public:
@@ -17,7 +15,7 @@ namespace KidzCashCore {
 		/// Adds Item to repository
 		/// </summary>
 		/// <param name="obj"></param>
-		virtual void Create(T);
+		virtual void Create(const T&);
 		/// <summary>
 		/// Returns all of the items in the repository
 		/// I originally had this as a vector of pointers, but
@@ -50,5 +48,24 @@ namespace KidzCashCore {
 		//std::vector<RepoItem> items;
 	};
 
+	template<typename T>
+	RepoBase<T>::RepoBase() {
+
+	}
+
+	template<typename T>
+	void RepoBase<T>::Create(const T& item) {
+		std::cout << "Uh oh! The polymorphism didn't work!" << std::endl;
+	}
+
+	template<typename T>
+	void RepoBase<T>::Update(int id, T&) {
+		std::cout << "Uh oh! The polymorphism didn't work!" << std::endl;
+	}
+
+	template<typename T>
+	void RepoBase<T>::Delete(int id) {
+		std::cout << "Uh oh! The polymorphism didn't work!" << std::endl;
+	}
 }
 

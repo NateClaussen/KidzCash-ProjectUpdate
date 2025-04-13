@@ -33,7 +33,7 @@ namespace KidzCashCore {
 		year = now.tm_year + 1900;
 	}
 
-	std::string Transaction::toStr() {
+	std::string Transaction::toStr() const {
 		std::stringstream ss;
 		ss << getId() << "," << day << "," << month << "," << year << "," << type << "," << amount;
 		return ss.str();
