@@ -8,6 +8,7 @@ class PointTracker
 {
 public:
 	void DisplayMenu(MenuOption);
+	void InputMainMenu();
 	//void DisplayNextStudents();
 	void AddPoints(int id, float p);
 	void RemovePoints(int id, float p);

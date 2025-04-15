@@ -28,13 +28,28 @@ void PointTracker::DisplayStudents(std::vector<Student> students) {
 	}
 }
 
+void PointTracker::InputMainMenu() {
+	std::string input;
+	std::cout << "                 <-- Prev(1) (2)Next -->\n";
+	std::cin >> input;
+	if (stoi(input) == 1) {
+		DisplayMenu(MenuOption::STUDENTS_NEXT);
+	}
+	else {
+		DisplayMenu(MenuOption::STUDENTS_PREV);
+	}
+}
+
 void PointTracker::DisplayMenu(MenuOption menu) {
+	system("CLS");
 	switch (menu) {
 	case STUDENTS_NEXT:
 		DisplayStudents(manager.GetNextStudents());
+		InputMainMenu();
 		break;
 	case STUDENTS_PREV:
 		DisplayStudents(manager.GetPreviousStudents());
+		InputMainMenu();
 		break;
 	case ADD_POINTS:
 		break;
